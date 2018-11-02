@@ -3,4 +3,4 @@ print ("git add .")
 print ("git commit -m 'Commit Description'")
 print ("git push -u origin master")
 
-userInput = input("Press any key to leave:")
+userInput = input("\nPress any key to leave:\n")
