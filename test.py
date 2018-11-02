@@ -1,7 +1,6 @@
-print ('Hello World')
+print ("Run the following commands in git bash to push to Github repository:")
+print ("git add .")
+print ("git commit -m 'Commit Description'")
+print ("git push -u origin master")
 
-print ('Hello Other Worlds')
-
-print ('Hello All Worlds')
-
-print ('New Test')
+userInput = input("Press any key to leave:")
