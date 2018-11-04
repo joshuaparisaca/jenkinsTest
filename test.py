@@ -1,5 +1,6 @@
 import time
 import os
+import math
 
 #Make sure to know how to define a global function
 
@@ -21,21 +22,41 @@ def math_Explanation():
 	print("<= Less Than or Equal to")
 	print(">  Great Than")
 	print(">= Greater Than or Equal to")
-	print("")	
-	print("Imported Math Stuff:")	
-	print("")	
-	print("")	
-	print("")	
-	print("")	
+	print("")
+	#print(math.isnan(y))
+	print("Math Import functions:")	
+	print("ceil(x): Rounds up the variables to the next integer.")	
+	print("floor(x): Rounds down the variables to the next integer")	
+	print("fabs(x): Returns the Absolute value of x")	
+	print("factorial(x): Returns the factorial of x")	
+	print("fmod(x, y): Returns the remainder of X divided by Y")	
+	print("fsum(iterableList/Array): Finds the total sum of an Array/List")	
+	print("isnan(x): Returns TRUE if X is NaN(Not a Number) | Returns False if X is actually a number")	
+	print("pow(x, y: Returns X to the power of Y")	
+	print("pi: Returns the value of pi")	
+	print("e: Returns the value of e")	
 
 def imports_Explanation():
-	print("This an Import function")
+	print("Most commonly used imports/libraries")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
 
 def variables_and_names_Explanation():
 	print("This is a Variables and Names function")
 
 def functions_Explanation():
 	print("Functions are basically Java Methods")
+def api_Explanation():
+	print("Here's a quick explanation about API")
 
 print("Run the following commands in git bash to push to Github repository:")
 print("git add .")
@@ -46,7 +67,7 @@ print("Python Concepts:")
 userFunctions = []
 userOptions = ['Commenting','Imports','Math','Variables and Names',
 'Strings and Text','Printing','Parameters and Input',
-'Reading Files', 'Writing Files', 'Functions', 'Boolean', 'Try Catch', 'Tips and Tricks', 'Debugging']
+'Reading Files', 'Writing Files', 'Functions', 'Boolean', 'Try Catch', 'Tips and Tricks', 'Debugging', 'API']
 
 for index, item in enumerate(userOptions):
 	renamedItem = item.lower().replace(" ","_") + "_Explanation"
@@ -58,6 +79,7 @@ try:
 	if userInput <= (index + 1):
 		print("Here's the explanation for:", userOptions[userInput - 1] + "\n")
 		os.system('cls')
+		print(userFunctions[userInput - 1])
 		globals()[userFunctions[userInput - 1]]() 
 		#This will call one of the functions based on the string from the userFunctions list
 		#globals() means it'll go through other python files to find your function
