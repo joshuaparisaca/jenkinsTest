@@ -1,4 +1,4 @@
-# Python script to test Jenkins out
+# Python script to test Jenkins
 >git add .
 >git commit -m 'Commit Description'
 >git push -u origin master
