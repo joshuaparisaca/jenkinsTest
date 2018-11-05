@@ -28,7 +28,7 @@ human2 = Human(human2_name, human2_age, human2_height)
 human1.print_stats() #Prints out the stats based on the variable values the object has
 human2.print_stats()
 
-human_list = []
-for row in rows:
-    human_list.append(Human(row.name, row.age, row.height))
+#human_list = []
+#for row in rows:
+#   human_list.append(Human(row.name, row.age, row.height))
     #Use this type of syntax to read from a file and input the values of a object into the "human" object and into a list 
