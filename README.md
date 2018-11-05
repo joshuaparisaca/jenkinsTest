@@ -5,4 +5,3 @@
 
 *Install Python
 >Run Script by going to CommandLine/Terminal Mode and enter: py test.py
->Sample Text
