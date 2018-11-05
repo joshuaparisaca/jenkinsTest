@@ -2,7 +2,7 @@ import time
 import os
 import math
 
-#Make sure to know how to define a global function
+#Make sure to know how to define a global functions
 
 def commenting_Explanation():
 	print("# Is used for a single line comment")
