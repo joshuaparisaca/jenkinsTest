@@ -21,7 +21,7 @@ def imports_Explanation():
   		"Math": "Used for Simple Math operations",
   		"Time": "Used to GET the Time",
   		"DateTime": "Used to MANIPULATE the Date and Time",
-  		"OS": "Used to interact with OS with provided functions",
+  		"OS": "Used to interact with your current OS with provided functions",
   		"Glob": "Used to Find files by using WILDCARDS or Regular Expressions and returns them as a List",
   		"Sys": "????????????????????????",
   		"Re": "Uses Regular Expressions for Complex String Matching + String Manipulation",
@@ -113,6 +113,7 @@ def main():
 	try:
 		userInput = int(input("\nPress select one of the options to learn more about these concepts:\n"))
 		if userInput <= (index + 1):
+			print(os.environ['MyVar'])
 			print("Here's the explanation for:", userOptions[userInput - 1] + "\n")
 			#os.system('cls')
 			globals()[userFunctions[userInput - 1]]() 

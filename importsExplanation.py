@@ -61,9 +61,18 @@ def _datetime_import_Explanation():
 	for x in dateTimeFunctionDict:
 		print(x , dateTimeFunctionDict[x])
 
-
 def _os_import_Explanation():
 	print("333333333333333333")
+	osFunctionDict = {
+		"os.name":"Will find out which OS you're running"
+		"":""
+		"error()":"Is actully used in try/catch as 'except IOError' and will only activate trying to access a invalid or inaccessible file/filepath"
+		"getcwd()":"Returns the Current Working Directory you're on"
+		"":""
+		"":""
+		"":""
+		"":""
+	}
 def _glob_import_Explanation():
 	print("4444444444444444")
 def _sys_import_Explanation():
