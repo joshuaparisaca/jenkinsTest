@@ -1,6 +1,9 @@
 import time
 import math
 import os
+import datetime
+
+import importsExplanation
 
 #Make sure to know how to define global functions an dhow to use them
 
@@ -16,8 +19,8 @@ def imports_Explanation():
 	
 	importDictionary = {
   		"Math": "Used for Simple Math operations",
-  		"Time": "Used to interact with Time",
-  		"DateTime": "Used to interact with Date and Time",
+  		"Time": "Used to GET the Time",
+  		"DateTime": "Used to MANIPULATE the Date and Time",
   		"OS": "Used to interact with OS with provided functions",
   		"Glob": "Used to Find files by using WILDCARDS or Regular Expressions and returns them as a List",
   		"Sys": "????????????????????????",
@@ -31,42 +34,21 @@ def imports_Explanation():
 
 	userImportOptions = []
 
-	for k, v in enumerate(importDictionary):
-		renamedImportFunctions = v.lower() + ("_import_Explanation")
+	for index, importItem in enumerate(importDictionary):
+		renamedImportFunctions = "importsExplanation._" + importItem.lower() + ("_import_Explanation()")
 		userImportOptions.append(renamedImportFunctions)
-		print('{:<3} {:<8} {:<3} {:<3}'.format(k + 1, v, " - ", importDictionary[v]))
+		print('{:<3} {:<8} {:<3} {:<3}'.format(index + 1, importItem, " - ", importDictionary[importItem]))
 
 	print(userImportOptions)
 
 	userImportChoice = int(input("\nPlease select one for more info on the import and their functions:\n"))
 
-	if userImportChoice <= (k + 1):
-		print("You selected: " + userImportOptions[userImportChoice])
-		print("Please create the functions for the imports")
+	if userImportChoice <= (index):
+		print("You selected: " + userImportOptions[userImportChoice - 1])
+		exec(userImportOptions[userImportChoice - 1])
 
 def math_Explanation():
-	print("Common Math Operators:")
-	print("\t+  Addition")
-	print("\t-  Subtraction")
-	print("\t*  Mulitplication")
-	print("\t/  Division")
-	print("\t%  Module")
-	print("\t<  Less Than")
-	print("\t<= Less Than or Equal to")
-	print("\t>  Great Than")
-	print("\t>= Greater Than or Equal to\n")
-	#print(math.isnan(y))
-	print("Math Import functions:")	
-	print("\tceil(x): Rounds up the variables to the next integer.")	
-	print("\tfloor(x): Rounds down the variables to the next integer")	
-	print("\tfabs(x): Returns the Absolute value of x")	
-	print("\tfactorial(x): Returns the factorial of x")	
-	print("\tfmod(x, y): Returns the remainder of X divided by Y")	
-	print("\tfsum(iterableList/Array): Finds the total sum of an Array/List")	
-	print("\tisnan(x): Returns TRUE if X is NaN(Not a Number) | Returns False if X is actually a number")	
-	print("\tpow(x, y: Returns X to the power of Y")	
-	print("\tpi: Returns the value of pi")	
-	print("\te: Returns the value of e")	
+	importsExplanation._math_import_Explanation()
 
 def variables_and_names_Explanation():
 	print("Python Variables are Typeless: They DON'T need to be Declared")
@@ -110,39 +92,42 @@ def strings_and_text_Explanation():
 	print(r"\(123)\(123)\(123) - Convert 3 digit values from Octal into String")
 	print("Aligning Output using Str.Format:")
 
-
 def functions_Explanation():
 	print("Functions are basically Java Methods")
 def api_Explanation():
 	print("Here's a quick explanation about API")
 
+def main():
+	print("Python Concepts:")
+	userFunctions = []
+	userOptions = ['Commenting','Imports','Math','Variables and Names',
+	'Strings and Text Formatting','User Input and Paramaters', 'Dictionary',
+	'Reading Files', 'Writing Files', 'Functions', 'Boolean', 'Try Catch', 'Tips and Tricks', 'Debugging', 'API']
 
-print("Python Concepts:")
-userFunctions = []
-userOptions = ['Commenting','Imports','Math','Variables and Names',
-'Strings and Text Formatting','User Input and Paramaters', 'Dictionary',
-'Reading Files', 'Writing Files', 'Functions', 'Boolean', 'Try Catch', 'Tips and Tricks', 'Debugging', 'API']
+	for index, item in enumerate(userOptions):
 
-for index, item in enumerate(userOptions):
-	renamedItem = item.lower().replace(" ","_") + "_Explanation"
-	userFunctions.append(renamedItem)
-	print ('{:<3} {:<0}'.format(index + 1, item))
+		renamedItem = item.lower().replace(" ","_") + "_Explanation"
+		userFunctions.append(renamedItem)
+		print ('{:<3} {:<0}'.format(index + 1, item))
 
-try:
-	userInput = int(input("\nPress select one of the options to learn more about these concepts:\n"))
-	if userInput <= (index + 1):
-		print("Here's the explanation for:", userOptions[userInput - 1] + "\n")
-		#os.system('cls')
-		print(userFunctions[userInput - 1])
-		globals()[userFunctions[userInput - 1]]() 
-		#This will call one of the functions based on the string from the userFunctions list
-		#globals() means it'll go through other python files to find your function
-		#locals() will try to find your function in this file only
-	else:
-		userFunctions[userInput]
-		print("Wrong: Over the Limit")
-except Exception as e:
-	print("~~~~~~~~~~~~~~~~This isnt a proper number~~~~~~~~~~~~~~~~~~~~`", e)
+	try:
+		userInput = int(input("\nPress select one of the options to learn more about these concepts:\n"))
+		if userInput <= (index + 1):
+			print("Here's the explanation for:", userOptions[userInput - 1] + "\n")
+			#os.system('cls')
+			globals()[userFunctions[userInput - 1]]() 
+			#This will call one of the functions based on the string from the userFunctions list
+			#globals() means it'll go through other python files to find your function
+			#locals() will try to find your function in this file only
+		else:
+			userFunctions[userInput]
+			print("Wrong: Over the Limit")
+	except Exception as e:
+		print("~~~~~~~~~~~~~~~~This isnt a proper number~~~~~~~~~~~~~~~~~~~~`", e)
+
+
+if __name__ == "__main__":
+	main()
 
 
 #Create class/function names with the names of the concepts and when user input the number, itll activate the class/function name
