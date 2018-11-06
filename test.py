@@ -11,6 +11,11 @@ def commenting_Explanation():
 	print("''' \n")
 	print("Both the SingleLine comment and MultiLine comment WILL NOT WORK if it's inside a string")
 
+def imports_Explanation():
+	print("Most commonly used imports/libraries") 
+	print("Math")
+	print("")
+
 def math_Explanation():
 	print("Common Math Operators:")
 	print("+  Addition")
@@ -36,22 +41,30 @@ def math_Explanation():
 	print("pi: Returns the value of pi")	
 	print("e: Returns the value of e")	
 
-def imports_Explanation():
-	print("Most commonly used imports/libraries") 
-	print("Math")
-	print("")
-	print("")
-	print("")
-	print("")
-	print("")
-	print("")
-	print("")
-	print("")
-	print("")
-	print("")
-
 def variables_and_names_Explanation():
-	print("This is a Variables and Names function")
+	print("Python Variables are Typeless: They DON'T need to be Declared")
+	print("They can be a:")
+	print("#Int x = 123")
+	print("#Long Int x = 123L")
+	print("#String x = 'hello world'")
+	print("#Double Float x = 3.14")
+	print("#List x = [0,1,2,3,4]")
+	print("#Tuple x = (0,1,2)")
+	print("#File x = open('file.py', 'r')")
+	
+def strings_and_text_Explanation():
+	print("String and Text")
+	print("x = 'There are %d types of people.' % 10")
+	print("binary = 'binary'")
+	print("do_not = 'don't'")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
 
 def functions_Explanation():
 	print("Functions are basically Java Methods")
