@@ -55,26 +55,57 @@ def _datetime_import_Explanation():
 		"date.today().strftime('%B')":"Month of year",
 		"date.today().strftime('%w')":"Weekday of the week",
 		"date.today().strftime('%d')":"Day of the month",
-		"date.today().strftime('%A')":"Day of week:",
+		"date.today().strftime('%A')":"Day of week"
 	}
 
+	print("DateTime import functions:")	
 	for x in dateTimeFunctionDict:
-		print(x , dateTimeFunctionDict[x])
+		print('%40s %2s  %11s' % (x, " - " , dateTimeFunctionDict[x]))
+
 
 def _os_import_Explanation():
-	print("333333333333333333")
 	osFunctionDict = {
-		"os.name":"Will find out which OS you're running"
-		"":""
-		"error()":"Is actully used in try/catch as 'except IOError' and will only activate trying to access a invalid or inaccessible file/filepath"
-		"getcwd()":"Returns the Current Working Directory you're on"
-		"":""
-		"":""
-		"":""
-		"":""
+		"os.name()":"Will find out which OS you're running",
+		"getcwd()":"Returns the Current Working Directory you're on",
+		"environ.get('PATH')":"Will list out ALL enviroment variables",
+		"abort()":"Will abort the application",
+		"path.exists(x)":"Returns TRUE is file exist | FALSE otherwise",
+		"listdir()":"Will list the files of the current directory",
+		"mkdir(x)":"Will create a folder based on folder name",
+		"makedirs(x/y)":"Will create a folder based on X value and a subfolder based on Y value",
+		"chdir(filepath)":"Changes to a different filepath directory based on specified filepath",
+		"rename(x,y)":"Will rename a x,filename with a new y,filename",
+		"remove(x)":"Will delete a specified filename",
+		"rmdir(x)":"Will delete a specified folder",
+		"popen(x)":"A variable OS commandline arguement that will be executable once it's been read",
+		"error()":"Is actually used in try/catch as 'except IOError' and will only activate trying to access a invalid or inaccessible file/filepath"
 	}
+
+	for x in osFunctionDict:
+		print('\t{:<20} {:<8}'.format(x, osFunctionDict[x]))
 def _glob_import_Explanation():
-	print("4444444444444444")
+	globFunctionDict = {
+		"glob.glob(x/filename)":"Uses Wildcards to return a list of files found",
+		"iglob(x)":"Uses Wildcards to return a list of files found but stores them in memory",
+		"escape(x)":"Finds filename but WILL IGNORE Glob Wildcards"
+	}
+
+	globWildcards = {
+		"*":"*.txt matches all files with the txt extension",
+		"/**/filename":"Will go through every subfolder recursively to find filename",
+		"?":"??? matches files with 3 characters long",
+		"[]":"[ABC]* matches files starting with A,B or C",
+		"[..]":"[A..Z]* matches files starting with capital letters",
+		"[!]":"	[!ABC]* matches files that do not start with A,B or C"
+	}
+	print("Glob import functions:")
+	for x in globFunctionDict:
+		print('\t{:<23} {:<15}'.format(x,globFunctionDict[x]))
+
+	print("\nGlob Wildcards:")
+	for x in globWildcards:
+		print('\t{:<20} {:<10}'.format(x,globWildcards[x]))
+
 def _sys_import_Explanation():
 	print("55555555555555555555555555")
 def _re_import_Explanation():

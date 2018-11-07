@@ -2,6 +2,7 @@ import time
 import math
 import os
 import datetime
+import glob
 
 import importsExplanation
 
@@ -105,7 +106,6 @@ def main():
 	'Reading Files', 'Writing Files', 'Functions', 'Boolean', 'Try Catch', 'Tips and Tricks', 'Debugging', 'API']
 
 	for index, item in enumerate(userOptions):
-
 		renamedItem = item.lower().replace(" ","_") + "_Explanation"
 		userFunctions.append(renamedItem)
 		print ('{:<3} {:<0}'.format(index + 1, item))
@@ -113,7 +113,10 @@ def main():
 	try:
 		userInput = int(input("\nPress select one of the options to learn more about these concepts:\n"))
 		if userInput <= (index + 1):
-			print(os.environ['MyVar'])
+
+			configfiles = glob.glob('C:/Users/Parisaca/Desktop/**/*.py', recursive=True)
+			print(configfiles)
+			
 			print("Here's the explanation for:", userOptions[userInput - 1] + "\n")
 			#os.system('cls')
 			globals()[userFunctions[userInput - 1]]() 
