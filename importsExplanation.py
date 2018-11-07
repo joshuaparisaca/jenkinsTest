@@ -112,8 +112,7 @@ def _sys_import_Explanation():
 		"stdout.write(x)":"Will print x",
 		"stderr.write(x)":"Will print x in a error format",
 		"stdin.readlines()":"Will ask user for console input",
-		"path()":"Will return where the python modules are located
-		",
+		"path()":"Will return where the python modules are located",
 		"exit()":"Exits the Python program"
 	}
 
