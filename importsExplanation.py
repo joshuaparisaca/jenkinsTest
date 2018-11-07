@@ -28,7 +28,6 @@ def _math_import_Explanation():
 	for x in mathFunctionDictionary:
 		print ('\t{:<18} {:<8}'.format(x, mathFunctionDictionary[x]))
 
-
 def _time_import_Explanation():
 
 	timeFunctionDict = {
@@ -62,7 +61,6 @@ def _datetime_import_Explanation():
 	for x in dateTimeFunctionDict:
 		print('%40s %2s  %11s' % (x, " - " , dateTimeFunctionDict[x]))
 
-
 def _os_import_Explanation():
 	osFunctionDict = {
 		"os.name()":"Will find out which OS you're running",
@@ -83,6 +81,7 @@ def _os_import_Explanation():
 
 	for x in osFunctionDict:
 		print('\t{:<20} {:<8}'.format(x, osFunctionDict[x]))
+
 def _glob_import_Explanation():
 	globFunctionDict = {
 		"glob.glob(x/filename)":"Uses Wildcards to return a list of files found",
@@ -107,16 +106,70 @@ def _glob_import_Explanation():
 		print('\t{:<20} {:<10}'.format(x,globWildcards[x]))
 
 def _sys_import_Explanation():
-	print("55555555555555555555555555")
+	sysFunctionDict = {
+		"argv()":"Will return a list of command/parameters passed to this python script",
+		"executable()":"Will return which python file is running",
+		"stdout.write(x)":"Will print x",
+		"stderr.write(x)":"Will print x in a error format",
+		"stdin.readlines()":"Will ask user for console input",
+		"path()":"Will return where the python modules are located
+		",
+		"exit()":"Exits the Python program"
+	}
+
 def _re_import_Explanation():
-	print("555566666666666666666666666666666666666666")
+	reFunctionsDict = {
+		"re.match(RegEx, x)":"Looks for Regular Expression at START of string",
+		"search(RegEx, x)":"Looks for Regular Expression ANYWHERE in the string ",
+		"sub(RegEx,RegEx,x)":"Replaces string found in Regular Expression with new Regular Expression",
+		"split(RegEx,x)":"Gets substrings found in Regular expressions and splits them into a List",
+		"findall(RegEx,y)":"Finds ALL SUBSTRINGS that matches the regular expression"
+	}
+
+	regularExpression = {
+		"^The":"Matches any string that start with 'The'",
+		"dog$":"Matches any string that ends in 'dog'",
+		"^The dog$":"EXACTLY Matches any string that's 'The dog'",
+		"abc+":"Matches 'ab' string that end with 1 or more 'c'",
+		"abc*":"Matches 'ab' string that ends with 0 or any 'c'",
+		"abc?":"Matches 'ab' string that ends with 0 or 1 'c'",
+		"abc.":"Matches 'abc' and one extra character",
+		"abc{2}":"Matches 'abc' is theres 2 extra 'c' at the end",
+		"abc{2-5}":"Matches 'abc' if there 2 - 5 'c' at the end",
+		"a(b|c)":"Matches either 'ab' or 'ac'",
+		"a(bc){2,5}":"Matches either 'abcbc' or 'abcbcbcbcbc'",
+		"[abc]":"Matches any string that has a, b, or c inside it",
+		"[0-9]":"Matches any string that has 0-9 | Can be [\d]",
+		"abc\s":"Matches 'abc' and white space or tab",
+		"<.+?>":"Finds <div> and </div>. I dont know how and why",
+	}
+	print("Re import functions:")
+	for x in reFunctionsDict:
+		print('\t{:<20} {:<10}'.format(x,reFunctionsDict[x]))
+
+	print("\nRegular Expressions breakdown:")
+	for x in regularExpression:
+		print('\t{:<20} {:<10}'.format(x,regularExpression[x]))
+
 def _urllib2_import_Explanation():
 	print("666666666666666666666666666666666")
+	
 def _smtplib_import_Explanation():
 	print("66666666666666666666666666666666666666666666666666")
+
 def _zlib_import_Explanation():
-	print("6666666666666666666666666666666666666666666666666666666666666")
+	zlibFunctionDict = {
+		"compress(x, level = y)" : "This will compress your file based on int level [1 = Fast 9 = Slow but Best]",
+		"compressobj()":"Compresses a HUGE file and returns a object to be used with compress()",
+		"decompress(x)":"Will Decompress a compressed object/file"
+	}
+
+	print("ZLib Functions:")
+	for x in zlibFunctionDict:
+		print('\t{:<25} {:<10}'.format(x, zlibFunctionDict[x]))
+
 def _unittest_import_Explanation():
 	print("6666666666666666666666666666666666666666666666")
+
 def _boto3_import_Explanation():
 	print("4444444444444444444444444444444444444444444444444")

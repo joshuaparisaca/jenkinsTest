@@ -20,15 +20,15 @@ def imports_Explanation():
 	
 	importDictionary = {
   		"Math": "Used for Simple Math operations",
-  		"Time": "Used to GET the Time",
-  		"DateTime": "Used to MANIPULATE the Date and Time",
-  		"OS": "Used to interact with your current OS with provided functions",
-  		"Glob": "Used to Find files by using WILDCARDS or Regular Expressions and returns them as a List",
-  		"Sys": "????????????????????????",
-  		"Re": "Uses Regular Expressions for Complex String Matching + String Manipulation",
-  		"Urllib2": "Retrieves data from URLs",
+  		"Time": "GETS the Time",
+  		"DateTime": "MANIPULATES the Date and Time",
+  		"OS": "Interact with your current OS and its FOLDER/FILES",
+  		"Sys": "Used to MANIPULATE Command Line arguements passed to python script",
+  		"Glob": "Uses WILDCARDS to FIND FILES",
+  		"Re": "Uses REGULAR EXPRESSIONS for String Matching + Manipulation",
+  		"Urllib2": "ACCESS WEBSITES to return info",
   		"Smtplib": "Used to send mail to any Internet machine",
-  		"Zlib": "Used for applications that need data compressed/decompressed",
+  		"Zlib": "COMPRESS/DECOMPRESS files and objects",
   		"Unittest": "Provides functions for Unit Testing",
   		"Boto3": "Amazon Web Service SDK for Python to write software for S3 or EC2. Uses Object Oriented API + low level direct service access",
 	}
