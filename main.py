@@ -3,6 +3,7 @@ import math
 import os
 import datetime
 import glob
+import re
 
 import importsExplanation
 
@@ -42,14 +43,11 @@ def imports_Explanation():
 
 	print(userImportOptions)
 
-	userImportChoice = int(input("\nPlease select one for more info on the import and their functions:\n"))
+	userImportChoice = eval(input("\nPlease select one for more info on the import and their functions:\n"))
 
 	if userImportChoice <= (index):
 		print("You selected: " + userImportOptions[userImportChoice - 1])
 		exec(userImportOptions[userImportChoice - 1])
-
-def math_Explanation():
-	importsExplanation._math_import_Explanation()
 
 def variables_and_names_Explanation():
 	print("Python Variables are Typeless: They DON'T need to be Declared")
@@ -61,8 +59,15 @@ def variables_and_names_Explanation():
 	print("#List x = [0,1,2,3,4]")
 	print("#Tuple x = (0,1,2)")
 	print("#File x = open('file.py', 'r')")
-	
-def strings_and_text_Explanation():
+	print("\nUse type() to determine what type of value a variable has")
+	print("x = 5.3")
+	print("type(x)")
+	print("Result is:", type(5.3))
+
+def math_Explanation():
+	importsExplanation._math_import_Explanation()
+
+def strings_and_text_formatting_Explanation():
 	print("Formatting strings:")
 	print("%d - Replaces %d with the integer defined outside string")
 	print("%s - Replaces %s with the variables or string defined outside string")
@@ -93,17 +98,64 @@ def strings_and_text_Explanation():
 	print(r"\(123)\(123)\(123) - Convert 3 digit values from Octal into String")
 	print("Aligning Output using Str.Format:")
 
+def user_input_and_paramaters_Explanation():
+	print("There's three ways to get user input:")
+	print("input('>Enter user input:'): Will take input and convert it to a string")
+	print("eval(input('>Enter user input')): Will take input and check if it's a int, float, or string and converts it to that")
+	print("first, second, third = argv : DEMANDS that you put in 3 inputs before you execute the python file - needs the sys import")
+
+def read_and_write_files_Explanation():
+
+	fileFunctionsDict = {
+		"open(filename)":"Opens a file",
+		"read(filename)":"Reads a file that's been opened",
+		"readline(filename)":"Reads ONLY ONE line of file",
+		"write(filename)":"Writes OR Appends a file",
+		"exists(filename)":"Checks if a file exists",
+		"truncate(filename)":"EMPTIES content of a file",
+		"close(filename)":"Closes/Saves a file and its changes"
+	}
+
+	for item in fileFunctionsDict:
+		print('\t{:<20} {:<10}'.format(item, fileFunctionsDict[item]))
+
+		matchObj = re.match( r'Writes OR Appends a file$', fileFunctionsDict[item])
+		if matchObj:
+			print("\t\tExample:")
+			print("\t\tx = open(file.txt, a)")
+			print("\t\tx.write('This line will APPEND to the file')")
+			print("\t\ty = open(file.txt, w)")
+			print("\t\ty.write('This line will OVERWRITE the file with this line. Can also use a file to overwrite another file')\n")
+
 def functions_Explanation():
 	print("Functions are basically Java Methods")
-def api_Explanation():
-	print("Here's a quick explanation about API")
+	print("These functions accept arguements/parameters and the last doesn't:\n")
+	
+	functionTypes = {
+		"def function1(*args)" : "This function can take in UNLIMITED arguements/parameters/ Good to store and loop in a list",
+		"def function2(args1)" : "This function needs ONE arguement/parameter to run",
+		"def function3(args1, args2)" : "This function needs TWO arguements/parameters to run",
+		"def function4()" : "This function DOES NOT need any arguement/parameters to run"
+	}
+	
+	for item in functionTypes:
+		print ('{:<28} {:<15}'.format(item, functionTypes[item]))
+
+	print("\nThey can accept variables values")
+	print("x = 4")
+	print("def function(x)\n")
+	print("They can accept direct string, int, lists, etc.")
+	print("def function('Hello', 2.5, [2,3,6])\n")
+	print("You can even calculate math inside them")
+	print("def function(x + 4, 2 + 2)")
+
 
 def main():
 	print("Python Concepts:")
 	userFunctions = []
-	userOptions = ['Commenting','Imports','Math','Variables and Names',
-	'Strings and Text Formatting','User Input and Paramaters', 'Dictionary',
-	'Reading Files', 'Writing Files', 'Functions', 'Boolean', 'Try Catch', 'Tips and Tricks', 'Debugging', 'API']
+	userOptions = ['Commenting','Imports','Variables and Names', 'Math',
+	'Strings and Text Formatting','User Input and Paramaters', 'Read and Write Files', 
+	'Functions', 'Dictionary', 'Boolean', 'Try Catch', 'Tips and Tricks', 'Debugging', 'API']
 
 	for index, item in enumerate(userOptions):
 		renamedItem = item.lower().replace(" ","_") + "_Explanation"
@@ -111,11 +163,8 @@ def main():
 		print ('{:<3} {:<0}'.format(index + 1, item))
 
 	try:
-		userInput = int(input("\nPress select one of the options to learn more about these concepts:\n"))
+		userInput = eval(input("\nPress select one of the options to learn more about these concepts:\n"))
 		if userInput <= (index + 1):
-
-			configfiles = glob.glob('C:/Users/Parisaca/Desktop/**/*.py', recursive=True)
-			print(configfiles)
 			
 			print("Here's the explanation for:", userOptions[userInput - 1] + "\n")
 			#os.system('cls')

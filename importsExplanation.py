@@ -76,6 +76,7 @@ def _os_import_Explanation():
 		"remove(x)":"Will delete a specified filename",
 		"rmdir(x)":"Will delete a specified folder",
 		"popen(x)":"A variable OS commandline arguement that will be executable once it's been read",
+		"system(x)":"Will execute the command, X, the syntax depends on the OS you're on",
 		"error()":"Is actually used in try/catch as 'except IOError' and will only activate trying to access a invalid or inaccessible file/filepath"
 	}
 
@@ -107,7 +108,7 @@ def _glob_import_Explanation():
 
 def _sys_import_Explanation():
 	sysFunctionDict = {
-		"argv()":"Will return a list of command/parameters passed to this python script",
+		"argv()":"Will return a list of command/parameters passed as parameters to this python script",
 		"executable()":"Will return which python file is running",
 		"stdout.write(x)":"Will print x",
 		"stderr.write(x)":"Will print x in a error format",
@@ -115,6 +116,9 @@ def _sys_import_Explanation():
 		"path()":"Will return where the python modules are located",
 		"exit()":"Exits the Python program"
 	}
+
+	for item in sysFunctionDict:
+		print('\t{:<18} {:<10}'.format(item, sysFunctionDict[item]))
 
 def _re_import_Explanation():
 	reFunctionsDict = {
@@ -171,4 +175,4 @@ def _unittest_import_Explanation():
 	print("6666666666666666666666666666666666666666666666")
 
 def _boto3_import_Explanation():
-	print("4444444444444444444444444444444444444444444444444")
+	print("Focus on EC2, S3 Buckets, IAM, DynamoDB, MAYBE CloudFormation")
