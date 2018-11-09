@@ -7,8 +7,6 @@ import re
 
 import importsExplanation
 
-#Make sure to know how to define global functions an dhow to use them
-
 def commenting_Explanation():
 	print("# Is used for a single line comment")
 	print("'''")
@@ -58,11 +56,15 @@ def variables_and_names_Explanation():
 	print("#Double Float x = 3.14")
 	print("#List x = [0,1,2,3,4]")
 	print("#Tuple x = (0,1,2)")
-	print("#File x = open('file.py', 'r')")
+	print("#File x = open('file.py', 'r')\n")
 	print("\nUse type() to determine what type of value a variable has")
 	print("x = 5.3")
 	print("type(x)")
 	print("Result is:", type(5.3))
+	print("\nGlobal, Local, NonLocal Variables:")
+	print('{:<20} {:<15}'.format("Global variables:", "Variables that are declared OUTSIDE all functions and the main function"))
+	print('{:<20} {:<15}'.format("Local variables:", "Variables that are declared INSIDE a function"))
+	print('{:<20} {:<15}'.format("NonLocal variables:", "Variables that are declared in a nested function/function inside a function"))
 
 def math_Explanation():
 	importsExplanation._math_import_Explanation()
@@ -96,7 +98,21 @@ def strings_and_text_formatting_Explanation():
 	print(r"\' - Prints Single Quotes in strings")
 	print(r"\x(HexValue) - Converts and prints from Hex values into String")
 	print(r"\(123)\(123)\(123) - Convert 3 digit values from Octal into String")
-	print("Aligning Output using Str.Format:")
+	# print("Aligning Output using Str.Format:")
+	stringFunctionsDict = {
+		"isalnum()":"Checks if string has BOTH letters AND numbers",
+		"isdigit()":"Check if string HAS digits",
+		"isalpha()":"Checks if string is alphabetical",
+		"isupper()":"Checks if string is UPPERCASE",
+		"islower()":"Checks if string is lowercase",
+		"isspace()":"Checks if string is ONLY Spaces",
+		"startswith(x)":"Checks if string starts with x",
+		"endswith(x)":"Checks if string ends with x"
+	}
+
+	print("\nStrings functions that return TRUE/FALSE:")
+	for item in stringFunctionsDict:
+		print('{:<15} {:<15}'.format(item, stringFunctionsDict[item]))
 
 def user_input_and_paramaters_Explanation():
 	print("There's three ways to get user input:")
@@ -113,6 +129,7 @@ def read_and_write_files_Explanation():
 		"write(filename)":"Writes OR Appends a file",
 		"exists(filename)":"Checks if a file exists",
 		"truncate(filename)":"EMPTIES content of a file",
+		"filename.seek(x)":"Sets the file's current position,0 is start of file 2 is end of file",
 		"close(filename)":"Closes/Saves a file and its changes"
 	}
 
@@ -149,13 +166,65 @@ def functions_Explanation():
 	print("You can even calculate math inside them")
 	print("def function(x + 4, 2 + 2)")
 
+	print("\nHow Functions return values")
+	print("def function1(a, b, c)")
+	print("\tprint('Adding %d and %d and %d' % (a, b, c))")
+	print("\treturn a + b + c\n")
+	print("This how to return multiple values and store them in variables:")
+	print("def function2(a, b, c)")
+	print("\tprint('Look at these values: %d and %d and %d' % (a, b, c))")
+	print("\treturn a, b, c")
+	print("newvalue1, newvalue2, newvalue3 = function2(a, b, c)")
+
+def conditionals_Explanation():
+
+	comparisonDict = {
+		"==":"Condition1 EQUALS Condition2",
+		"!=":"Condition1 NOT EQUALS Condition2",
+		"<>":"Condition1 NOT EQUALS Condition2",
+		"<":"Less than ",
+		"<=":"Less than or equal to",
+		">":"Greater than",
+		">=":"Greater than or equal to",
+		"AND":"Condition1 AND Condition2 HAS to be TRUE",
+		"OR":"Condition1 OR Condition2 CAN be TRUE",
+		"NOT":"Returns TRUE if condition/bool variable/function is false",
+		"TRUE":"If Function executes or Bool variable",
+		"FALSE":"If Function fails or Bool variable"
+	}
+	
+	for item in comparisonDict:
+		print('{:<15} {:<10}'.format(item, comparisonDict[item]))
+
+	print("\nx = 15")
+	print("if x == 15:")
+	print("\tprint('x is 15')")
+	print("elif x < 15")
+	print("\tprint('x less than or equal to 15')")
+	print("elif x > 15")
+	print("\tprint('x greater than or equal to 15')")
+	print("else:")
+	print("\tprint('x is NOT a number')")
+
+def loops_Explanation():
+	print("numberList = [1,2,3,4,5]")
+	print("for item in numberList:")
+	print("\tprint(item)")
+	print("for x in range(0,6)")
+	print("\tprint(x)")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
+	print("")
 
 def main():
 	print("Python Concepts:")
 	userFunctions = []
 	userOptions = ['Commenting','Imports','Variables and Names', 'Math',
 	'Strings and Text Formatting','User Input and Paramaters', 'Read and Write Files', 
-	'Functions', 'Dictionary', 'Boolean', 'Try Catch', 'Tips and Tricks', 'Debugging', 'API']
+	'Functions', 'Conditionals', 'Loops', 'Dictionary', 'Try Catch', 'Debugging', 'API']
 
 	for index, item in enumerate(userOptions):
 		renamedItem = item.lower().replace(" ","_") + "_Explanation"
