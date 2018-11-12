@@ -4,6 +4,7 @@ import os
 import datetime
 import glob
 import re
+import sys
 
 import importsExplanation
 
@@ -60,7 +61,7 @@ def variables_and_names_Explanation():
 	print("\nUse type() to determine what type of value a variable has")
 	print("x = 5.3")
 	print("type(x)")
-	print("Result is:", type(5.3))
+	print("Result is:", )
 	print("\nGlobal, Local, NonLocal Variables:")
 	print('{:<20} {:<15}'.format("Global variables:", "Variables that are declared OUTSIDE all functions and the main function"))
 	print('{:<20} {:<15}'.format("Local variables:", "Variables that are declared INSIDE a function"))
@@ -220,6 +221,9 @@ def loops_Explanation():
 	print("")
 
 def main():
+
+	print(sys.version)
+
 	print("Python Concepts:")
 	userFunctions = []
 	userOptions = ['Commenting','Imports','Variables and Names', 'Math',
