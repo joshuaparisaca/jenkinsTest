@@ -176,3 +176,13 @@ def _unittest_import_Explanation():
 
 def _boto3_import_Explanation():
 	print("Focus on EC2, S3 Buckets, IAM, DynamoDB, MAYBE CloudFormation")
+	print("This is a lecture on how to use boto3 for EC2")
+	print("PreReq: Boto3 MUST be used in the EC2 instance, cannot be used outside the EC2 instance")
+	print("you must configure the EC2 instance to get the region, etc.")
+	print("Install Pip")
+	print("Install AWS CLI")
+	print("Run: aws configure")
+	print("\tAccess Key")
+	print("\tSecret Key")
+	print("\tRegion: us-east-1 (WHEREVER THE EC2 Instance is at)")
+	print("\tDefault format: json")
